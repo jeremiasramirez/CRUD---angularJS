@@ -4,6 +4,10 @@ app.config(function($routeProvider){
  
     $routeProvider
 
+        .when("/",{
+            templateUrl: "partials/main.html",
+            controller: "main"
+        })
         .when("/post",{
             templateUrl: "partials/post.html",
             controller: "posteo"

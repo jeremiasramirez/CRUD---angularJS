@@ -11,13 +11,17 @@
      -->
 
     <!-- 
-        Library angular
+       ------- Library angular ----------
      -->
      <script src="node_modules/angular/angular.min.js"></script>
+
+
 <!-- 
     Library angular > angular-route
  -->
      <script src="node_modules/angular-route/angular-route.min.js"></script>
+
+
 
     <!-- 
         Config angularJS - app 
@@ -25,7 +29,7 @@
      <script src="js/config.js"></script>
 
 <!-- 
-    controllers
+    ------------controllers -----------
  -->
 
  <!-- 
@@ -33,19 +37,32 @@
   -->
   <script src="js/controller/posteo.js"></script>
 
+
+
  <!-- 
      controllers > muestreo
   -->
   <script src="js/controller/mostrar.js"></script>
 
+
+
+ <!-- 
+     controllers > main js controller
+  -->
+  <script src="js/controller/main-ctrl.js"></script>
+
+
+
 <!-- 
-    Styles css
+  ----------  Styles css -----------
  -->
 
 <link rel="stylesheet" href="jeremias-lib/jeremias-lib.css">
 </head>
 <body>
     
+
+
     <!-- Menu -->
 <ul class="menu--blue">
     <li><a href="#!/post">Agregar</a></li>
