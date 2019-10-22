@@ -1,0 +1,53 @@
+<!-- 
+
+    search data 
+
+ -->
+<form class="form">
+    <input type="text" class="large"  ng-model="search" placeholder="Busca un usuario">
+</form>
+
+
+
+<!--
+    show data
+ -->
+<table class="table">
+    <h1 class="btn--yes large">Usuarios</h1>
+
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Lastname</th>
+    </tr>
+
+    <tr ng-repeat="user in users | filter:search | limitTo:position | limitTo:-5">
+        <td>{{user.id_data}}</td>
+        <td>{{user.name}}</td>
+        <td>{{user.lastname}}</td>
+    </tr>
+
+</table>
+
+
+<!-- 
+    navigation to info
+ -->
+
+
+<div class="list">
+<!-- 
+    counter of pages
+ -->
+    <div>
+        <p class="btn--yes ">page {{counterPage}} of {{sizeOfData}}</p>
+    </div>
+
+
+    <!-- 
+        button clicks for pages
+     -->
+    <button class="btn--yes dark min"  ng-click="backTo()">Back</button>
+    <button class="btn--yes min dark" ng-click="nextTo()">Next</button>
+
+</div>
