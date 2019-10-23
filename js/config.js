@@ -12,6 +12,14 @@ app.config(function($routeProvider){
             templateUrl: "partials/post.html",
             controller: "posteo"
         })
+        .when("/eliminar",{
+            templateUrl: "partials/eliminar.html",
+            controller: "eliminar"
+        })
+        .when("/eliminar/:id",{
+            templateUrl: "partials/eliminar.html",
+            controller: "eliminar"
+        })
         .when("/mostrar",{
             templateUrl: "partials/mostrar.html",
             controller: "mostrar"

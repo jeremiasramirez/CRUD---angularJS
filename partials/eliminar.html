@@ -1,0 +1,62 @@
+<!-- 
+
+    search data 
+
+ -->
+ <form class="form">
+    <input type="text" class="large"  ng-model="search" placeholder="Busca para eliminar">
+</form>
+
+
+<!-- 
+
+    msj deleted
+ -->
+<p class="btn--rm in" ng-hide="msjShow">{{msj}}</p>
+<!--
+    show data
+ -->
+ <br>
+ <br>
+ <br>
+<table class="table">
+    <h1 class="btn--rm large">Eliminar</h1>
+
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Lastname</th>
+        <th>Eliminar</th>
+    </tr>
+
+    <tr ng-repeat="user in users | filter:search | limitTo:position | limitTo:-5">
+        <td>{{user.id_data}}</td>
+        <td>{{user.name}}</td>
+        <td>{{user.lastname}}</td>
+        <td><a class="btn--rm minmin" href="#!/eliminar/{{user.id_data}}">{{"Eliminar"}}</a></td>
+    </tr>
+
+</table>
+
+
+<!-- 
+    navigation to info
+ -->
+
+
+<div class="list">
+<!-- 
+    counter of pages
+ -->
+    <div>
+        <p class="btn--yes ">page {{counterPage}} of {{sizeOfData}}</p>
+    </div>
+
+
+    <!-- 
+        button clicks for pages
+     -->
+    <button class="btn--yes dark min"  ng-click="backTo()">Back</button>
+    <button class="btn--yes min dark" ng-click="nextTo()">Next</button>
+
+</div>

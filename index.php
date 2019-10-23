@@ -51,6 +51,10 @@
   -->
   <script src="js/controller/main-ctrl.js"></script>
 
+ <!-- 
+     controllers > delete js controller
+  -->
+  <script src="js/controller/delete.js"></script>
 
 
 <!-- 
