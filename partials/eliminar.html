@@ -12,14 +12,14 @@
 
     msj deleted
  -->
-<p class="btn--rm in" ng-hide="msjShow">{{msj}}</p>
+<p class="btn--rm" ng-hide="msjShow">{{msj}}</p>
 <!--
     show data
  -->
  <br>
  <br>
  <br>
-<table class="table">
+<table class="table out">
     <h1 class="btn--rm large">Eliminar</h1>
 
     <tr>
@@ -49,14 +49,14 @@
     counter of pages
  -->
     <div>
-        <p class="btn--yes ">page {{counterPage}} of {{sizeOfData}}</p>
+        <p class="btn--rm fire in">page {{counterPage}} of {{sizeOfData}}</p>
     </div>
 
 
     <!-- 
         button clicks for pages
      -->
-    <button class="btn--yes dark min"  ng-click="backTo()">Back</button>
-    <button class="btn--yes min dark" ng-click="nextTo()">Next</button>
+    <button class="btn--yes  in min"  ng-click="backTo()">Back</button>
+    <button class="btn--yes in min" ng-click="nextTo()">Next</button>
 
 </div>

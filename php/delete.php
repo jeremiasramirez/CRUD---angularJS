@@ -41,14 +41,28 @@ class DELETE{
 		$this->conectedDB();
 
 		try{
-			$sqlStatement = "DELETE FROM data WHERE id_data = '$id'";
+		
+			$sqlStatementShow = "SELECT id_data FROM data";
+		
+			$queryShow = mysqli_query($this->conection, $sqlStatementShow);
+			 
+			$band = 0;
+			while($row = mysqli_fetch_array($queryShow)){
+				if($row["id_data"] == $id){
+					$band=1;
+				}
+			 
+			}	
 
-			$queryExec = mysqli_query($this->conection, $sqlStatement);
-			if(!$queryExec){
-				throw new Exception("Not complete");
+			if($band == 1){
+				$sqlStatement = "DELETE FROM data WHERE id_data = '$id'";	
+				$queryExec = mysqli_query($this->conection, $sqlStatement);
+
+				echo json_encode(array("msj" => "complete"));
+				
 			}
 			else{
-				echo json_encode(array("msj" => "complete"));
+				throw new Exception("Not complete");
 			}
 		 
 		}catch(Exception $e){

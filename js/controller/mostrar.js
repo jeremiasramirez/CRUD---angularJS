@@ -4,6 +4,8 @@ app.controller("mostrar", ["$scope", "$http", function($scope, $http){
     $scope.position = 5;
     $scope.counterPage = 1;
     $scope.sizeOfData = 1;
+    
+
 
     $http({
 

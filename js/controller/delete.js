@@ -4,7 +4,15 @@ app.controller("eliminar", ["$routeParams", "$scope", "$http", function($routePa
     $scope.position = 5;
     $scope.counterPage = 1;
     $scope.sizeOfData = 1;
+
+
+    /*
     
+        request to show element
+    */
+   $routeParams.id = typeof $routeParams.id == "string" ? Number(parseInt($routeParams.id)) : Number(parseInt($routeParams.id))
+ 
+
     $http({
 
         method: "get",
@@ -29,14 +37,13 @@ app.controller("eliminar", ["$routeParams", "$scope", "$http", function($routePa
         }
 
         $scope.backTo = function(){
+
             if($scope.counterPage > 1 && $scope.counterPage> 0){
+
                 $scope.counterPage -= 1;
                 $scope.position -= 5;
 
-
-            }
-
-            
+            }            
         }
 
 
@@ -47,15 +54,25 @@ app.controller("eliminar", ["$routeParams", "$scope", "$http", function($routePa
     $scope.msj = null;
     $scope.msjShow = 1;
 
+    
 
-    if( ($routeParams.id !== undefined) && ($routeParams.id !== null) && ($routeParams.id !== "") ){
-       $http({
 
+
+    /*
+
+    request to delete elements
+    
+    */
+    if( (parseInt($routeParams.id) !== undefined) && (parseInt($routeParams.id) !== null) && (parseInt($routeParams.id) !== "") &&  typeof $routeParams.id === "number" ){
+        console.log($routeParams.id)
+        $http({
+    
            method: "post",
            url: "php/delete.php?id=" + $routeParams.id,
            header: {
                "Content-Type" : "application/x-www-form-urlencoded"
            }
+           
        }).then(function(res){
 
             if(res.data.msj=="complete"){
@@ -73,34 +90,12 @@ app.controller("eliminar", ["$routeParams", "$scope", "$http", function($routePa
             }
 
 
-
-
-       
-
-
-
        })
     }
  
     
     
 }])
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
