@@ -32,9 +32,16 @@ app.controller("eliminar", ["$routeParams", "$scope", "$http", function($routePa
                 $scope.position += 5;
 
             }
+            else if($scope.counterPage === $scope.sizeOfData){
+                /*
+                * reset position of counter page and position of lists
+                */
+                $scope.counterPage = 1;
+                $scope.position = 5;
+            }
   
             
-        }
+        };
 
         $scope.backTo = function(){
 
