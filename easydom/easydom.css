@@ -1,0 +1,88 @@
+body{
+    margin: 0;
+    padding:0;
+}
+.templateWindow{
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(1%, 1%,1%, 70%);
+    position: absolute;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.windowError{
+    top: -80px;
+    width: 400px;
+    background: white;
+    border-radius: 5px;
+    height: 300px;
+    position: relative;
+    z-index: 100;
+    padding: 0 1em 1em ;
+}
+
+.titleWindow{
+    color: red;
+    border-bottom:1px solid  rgba(30%, 1% , 1%, 10%);
+    font-family: arial;
+    margin: 0em 0 1.3em;
+    padding-bottom: 1em;
+    padding-top: .5em;
+    text-align: center;
+    font-size: 25px;
+}
+
+.messageWindow{
+    color: black;
+    font-size: 18px;
+    padding-bottom: .4em;
+    font-family: AlBattar;
+    text-align: center;
+    padding-top: 1em;
+}
+
+.buttonOk{
+    color: white;
+    font-weight: 600;
+    background: red;
+    border: 0;
+    border-radius: 5px;
+    padding: .5em 0;
+    width: 92%;
+    transition: .4s;
+    position: absolute;
+    bottom:.3em;
+}
+.buttonOk:hover{
+    cursor:pointer;
+    transition: .4s;
+    background: darkred;
+}
+
+@media screen and (max-width: 400px){
+    .windowError{
+        transform: scale(.9);
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
