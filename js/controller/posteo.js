@@ -1,17 +1,17 @@
 app.controller("posteo", ["$http", "$scope",function($http, $scope){
 
     /*
-        inputs |  value 
+        inputs |  value
     */
 
     var formname = document.getElementById("inputName");
 
     var formlastname = document.getElementById("inputLastName")
- 
+
 
     $scope.msj = null;
     $scope.showmsj = 1;
-    /* 
+    /*
         request
     */
     $scope.posted = function(){
@@ -20,7 +20,7 @@ app.controller("posteo", ["$http", "$scope",function($http, $scope){
             $http({
 
                 method: "post",
-                url: "php/post.php?name=" +formname.value+"&lastname=" +formlastname.value , 
+                url: "php/post.php?name=" +formname.value+"&lastname=" +formlastname.value ,
                 header: {
                     "Content-type" : "application/x-www-form-urlencoded"
                 }
@@ -33,14 +33,17 @@ app.controller("posteo", ["$http", "$scope",function($http, $scope){
                     $scope.showmsj=1;
                     $scope.$apply();
                 },2000)
-            })  
+            })
 
-            //clean the input 
+            //clean the input
             formname.value ="";
             formlastname.value = "";
 
 
             // end if
+        }
+        else{
+            windowError("Campos vacios", "Debes rellenar todos los campos para realizar el posteo")
         }
 
 // end function posted
