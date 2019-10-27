@@ -26,6 +26,10 @@ app.controller("mostrar", ["$scope", "$http", function($scope, $http){
                 $scope.position += 5;
 
             }
+            else if($scope.counterPage === $scope.sizeOfData){
+                $scope.counterPage = 1;
+                $scope.position = 5;
+            }
   
             
         }
